@@ -78,7 +78,7 @@ describe('@emk4652/gibwork-mcp-cli Test Suite', () => {
   it('generates an idempotent submission draft and dry-run task creation payload', async () => {
     const draft = await service.draftSubmission({
       taskId: HACKATHON_BOUNTY_ID,
-      repoUrl: 'https://github.com/emk4652/gibwork-agent-kit',
+      repoUrl: 'https://github.com/emk4652/gibwork-mcp-cli',
       summary: 'MCP server + CLI + autonomous agent toolkit built on @gibwork/sdk and @solana/web3.js',
       deliverables: ['MCP stdio server', 'CLI tool', 'Solana Mainnet USDC escrow verifier', 'Vitest suite'],
     });

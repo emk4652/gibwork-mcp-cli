@@ -63,8 +63,8 @@ Autonomous coding agents (Claude Code, Cursor, Antigravity, Codex, OpenClaw) and
 Requires Node.js 22 or newer.
 
 ```bash
-git clone https://github.com/emk4652/gibwork-agent-kit.git
-cd gibwork-agent-kit
+git clone https://github.com/emk4652/gibwork-mcp-cli.git
+cd gibwork-mcp-cli
 npm install
 npm run build
 npm test
@@ -186,7 +186,7 @@ SCORE   | ACTION                | REWARD         | MATCHED SKILLS             | 
 
 ```bash
 node ./dist/cli.js draft-submission 1052f22d-3f87-4b1d-b0d7-71a60679e7fa \
-  --repo "https://github.com/emk4652/gibwork-agent-kit" \
+  --repo "https://github.com/emk4652/gibwork-mcp-cli" \
   --summary "Built @emk4652/gibwork-mcp-cli integrating @gibwork/sdk with MCP stdio tools and Solana Mainnet SPL USDC verification."
 ```
 
