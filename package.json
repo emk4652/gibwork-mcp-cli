@@ -1,0 +1,49 @@
+{
+  "name": "@emk4652/gibwork-mcp-cli",
+  "version": "1.0.0",
+  "description": "Autonomous Developer Agent Kit, MCP Server, and CLI for Gibwork Bounties and Solana SPL USDC Escrow Verification",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "gibwork-kit": "./dist/cli.js",
+    "gibwork-mcp": "./dist/mcp.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "start:mcp": "node ./dist/mcp.js",
+    "start:cli": "node ./dist/cli.js"
+  },
+  "keywords": [
+    "gibwork",
+    "solana",
+    "mcp",
+    "cli",
+    "bounties",
+    "usdc",
+    "escrow",
+    "agent-kit"
+  ],
+  "author": "emk4652 (Solana: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1)",
+  "license": "MIT",
+  "dependencies": {
+    "@gibwork/sdk": "^0.2.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "@solana/web3.js": "^1.98.4",
+    "bs58": "^6.0.0",
+    "commander": "^14.0.3",
+    "tweetnacl": "^1.0.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
