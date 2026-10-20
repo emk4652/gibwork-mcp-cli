@@ -1,0 +1,14 @@
+{
+  "bountyId": "d321ae8f-34f0-4c2f-b6ef-af7773d096ba",
+  "idempotencyKey": "d321ae8f-34f0-4c2f-b6ef-999999999903",
+  "wallet": "9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+  "content": "Official 6-part X Thread + Video Breakdown on the Gibwork Mobile App & Solana On-Chain Escrow workflow: https://github.com/emk4652/gibwork-mcp-cli/tree/main/submissions/gibwork-mobile-bounty . Payout Wallet: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+  "referenceLink": "https://github.com/emk4652/gibwork-mcp-cli/tree/main/submissions/gibwork-mobile-bounty",
+  "timestamp": "2026-10-20T16:46:07.315Z",
+  "sdkPrepareCreate": {
+    "ok": false,
+    "status": 403,
+    "code": "PLATFORM_WALLET_REQUIRED",
+    "message": "Expected an object containing only: content, referral, mediaIds, idempotencyKey"
+  }
+}

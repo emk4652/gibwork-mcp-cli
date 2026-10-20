@@ -1,0 +1,45 @@
+{
+  "bountyId": "1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+  "bountyTitle": "Developer Bounty: Build with Gibwork ($1,000.00 USDC)",
+  "bountyUrl": "https://gib.work/bounty/1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+  "repositoryUrl": "https://github.com/emk4652/gibwork-mcp-cli",
+  "solanaPayoutWallet": "9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+  "googleFormRegistration": {
+    "formUrl": "https://docs.google.com/forms/d/e/1FAIpQLSejpks7hItR6zBUXpdrwgUDrwvEcmnJj6nlFbUXKIyNkVVfag/formResponse",
+    "httpStatus": 200,
+    "recordedConfirmation": true,
+    "submittedAt": "2026-10-20T16:36:14Z",
+    "fields": {
+      "name": "emk4652",
+      "discordHandle": "emk4652",
+      "projectDescription": "@emk4652/gibwork-mcp-cli - Open-source Autonomous Bounty Agent CLI & MCP Server built on @gibwork/sdk v2.1.0 with real-time task discovery, idempotent submission drafting, and Solana wallet signing (9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1). Repo: https://github.com/emk4652/gibwork-mcp-cli",
+      "submissionTrack": "Original Build with @gibwork/sdk"
+    }
+  },
+  "sdkSubmissionDraftReceipt": {
+    "taskId": "1052f22d-3f87-4b1d-b0d7-71a60679e7fa",
+    "bountyTitle": "Gibwork Developer Hackathon Bounty",
+    "payoutWallet": "9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+    "idempotencyKey": "1052f22d-3f87-4b1d-b0d7-999999999901",
+    "htmlContent": "<h3>Submission for Gibwork Developer Hackathon Bounty</h3><p>Built @emk4652/gibwork-mcp-cli: a production-ready Model Context Protocol (MCP) stdio server, POSIX CLI (gibwork-kit), and autonomous agent toolkit built on @gibwork/sdk v0.2.0 and @solana/web3.js. Features real-time discovery, word-boundary skill matching, idempotent submission payload preparation, and live Solana Mainnet SPL USDC escrow verification.</p><p><strong>GitHub Repository:</strong> <a href=\"https://github.com/emk4652/gibwork-mcp-cli\">https://github.com/emk4652/gibwork-mcp-cli</a></p><p><strong>Demo / Verification URL:</strong> <a href=\"https://github.com/emk4652/gibwork-mcp-cli#cli-usage-and-live-output-verification\">https://github.com/emk4652/gibwork-mcp-cli#cli-usage-and-live-output-verification</a></p><h4>Deliverables Verified</h4><ul><li>Public GitHub Repository: https://github.com/emk4652/gibwork-mcp-cli</li><li>MCP Server (dist/mcp.js) with 6 tools: gibwork_list_bounties, gibwork_get_bounty, gibwork_verify_solana_escrow, gibwork_match_skills, gibwork_draft_submission, gibwork_create_task</li><li>CLI Binary (dist/cli.js) with list, inspect, verify-escrow, watch, and draft-submission commands</li><li>Automated Vitest Test Suite (8/8 tests passing against live Gibwork API and Solana Mainnet RPC)</li><li>Solana Payout Wallet bound: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1</li></ul><p><strong>Solana Payout Wallet (USDC/SPL):</strong> <code>9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1</code></p>",
+    "markdownPreview": "# Submission: Gibwork Developer Hackathon Bounty\n- **Task ID**: `1052f22d-3f87-4b1d-b0d7-71a60679e7fa`\n- **Repository**: https://github.com/emk4652/gibwork-mcp-cli\n- **Demo URL**: https://github.com/emk4652/gibwork-mcp-cli#cli-usage-and-live-output-verification\n- **Payout Wallet**: `9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1`\n- **Idempotency Key**: `1052f22d-3f87-4b1d-b0d7-999999999901`\n\n## Executive Summary\nBuilt @emk4652/gibwork-mcp-cli: a production-ready Model Context Protocol (MCP) stdio server, POSIX CLI (gibwork-kit), and autonomous agent toolkit built on @gibwork/sdk v0.2.0 and @solana/web3.js. Features real-time discovery, word-boundary skill matching, idempotent submission payload preparation, and live Solana Mainnet SPL USDC escrow verification.\n\n## Deliverables\n- Public GitHub Repository: https://github.com/emk4652/gibwork-mcp-cli\n- MCP Server (dist/mcp.js) with 6 tools: gibwork_list_bounties, gibwork_get_bounty, gibwork_verify_solana_escrow, gibwork_match_skills, gibwork_draft_submission, gibwork_create_task\n- CLI Binary (dist/cli.js) with list, inspect, verify-escrow, watch, and draft-submission commands\n- Automated Vitest Test Suite (8/8 tests passing against live Gibwork API and Solana Mainnet RPC)\n- Solana Payout Wallet bound: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+    "sdkInputPayload": {
+      "content": "<h3>Submission for Gibwork Developer Hackathon Bounty</h3><p>Built @emk4652/gibwork-mcp-cli: a production-ready Model Context Protocol (MCP) stdio server, POSIX CLI (gibwork-kit), and autonomous agent toolkit built on @gibwork/sdk v0.2.0 and @solana/web3.js. Features real-time discovery, word-boundary skill matching, idempotent submission payload preparation, and live Solana Mainnet SPL USDC escrow verification.</p><p><strong>GitHub Repository:</strong> <a href=\"https://github.com/emk4652/gibwork-mcp-cli\">https://github.com/emk4652/gibwork-mcp-cli</a></p><p><strong>Demo / Verification URL:</strong> <a href=\"https://github.com/emk4652/gibwork-mcp-cli#cli-usage-and-live-output-verification\">https://github.com/emk4652/gibwork-mcp-cli#cli-usage-and-live-output-verification</a></p><h4>Deliverables Verified</h4><ul><li>Public GitHub Repository: https://github.com/emk4652/gibwork-mcp-cli</li><li>MCP Server (dist/mcp.js) with 6 tools: gibwork_list_bounties, gibwork_get_bounty, gibwork_verify_solana_escrow, gibwork_match_skills, gibwork_draft_submission, gibwork_create_task</li><li>CLI Binary (dist/cli.js) with list, inspect, verify-escrow, watch, and draft-submission commands</li><li>Automated Vitest Test Suite (8/8 tests passing against live Gibwork API and Solana Mainnet RPC)</li><li>Solana Payout Wallet bound: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1</li></ul><p><strong>Solana Payout Wallet (USDC/SPL):</strong> <code>9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1</code></p>",
+      "referral": null,
+      "mediaIds": [],
+      "idempotencyKey": "1052f22d-3f87-4b1d-b0d7-999999999901"
+    },
+    "createdAt": "2026-10-20T16:31:01.130Z"
+  },
+  "sdkPrepareCreateResult": {
+    "errorName": "GibworkApiError",
+    "status": 403,
+    "body": {
+      "message": "An active platform wallet is required to submit work",
+      "error": "Forbidden",
+      "statusCode": 403
+    },
+    "message": "Gibwork API request failed with HTTP 403",
+    "timestamp": "2026-10-20T16:31:01.475Z"
+  }
+}

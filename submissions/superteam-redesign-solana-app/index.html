@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gibwork v3 Command Center — Solana App Redesign ($1,500 USDC Bounty)</title>
+  <style>
+    :root {
+      --bg-primary: #090D16;
+      --bg-surface: #111827;
+      --bg-elevated: #1F2937;
+      --border-color: #2E3A4E;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --text-muted: #9CA3AF;
+      --accent-emerald: #10B981;
+      --accent-amber: #F59E0B;
+      --accent-sky: #38BDF8;
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: "JetBrains Mono", Consolas, "Courier New", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      padding: 24px 32px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--accent-emerald);
+      color: #052E16;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      border-radius: 4px;
+    }
+    .brand h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .wallet-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 8px 14px;
+      border-radius: 4px;
+    }
+    .readiness-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .metric-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 14px 16px;
+      border-radius: 4px;
+    }
+    .metric-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+    .filter-group {
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-color);
+      padding: 7px 14px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button.active, button.primary {
+      background: var(--accent-emerald);
+      color: #052E16;
+      border-color: var(--accent-emerald);
+      font-weight: 600;
+    }
+    .table-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      white-space: nowrap;
+      font-size: 0.875rem;
+    }
+    th {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      background: #0D131F;
+    }
+    .mono {
+      font-family: var(--font-mono);
+    }
+    .reward-cell {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--accent-emerald);
+    }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: 3px;
+    }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 13, 22, 0.82);
+      display: none;
+      place-items: center;
+      padding: 24px;
+    }
+    .modal-backdrop.open {
+      display: grid;
+    }
+    .modal {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      width: 100%;
+      max-width: 760px;
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    pre {
+      background: #090D16;
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      overflow-x: auto;
+      color: var(--accent-sky);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-mark">GW</div>
+      <div>
+        <h1>GIBWORK COMMAND CENTER v3.0</h1>
+        <p style="font-size:0.8rem;color:var(--text-muted);">High-Density Solana Bounty Terminal &amp; @gibwork/sdk Inspector</p>
+      </div>
+    </div>
+    <div class="wallet-bar">
+      <span>SOLANA MAINNET</span>
+      <span>|</span>
+      <span style="color:var(--accent-emerald);">9GYpcKGM...6uCtUZ1</span>
+      <span>|</span>
+      <span>INTENT FEE: 0.15 USDC</span>
+    </div>
+  </header>
+
+  <section class="readiness-grid">
+    <div class="metric-box">
+      <div class="metric-label">Verified Open Pool</div>
+      <div class="metric-value">$1,365.00 USDC</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Escrow Program ID</div>
+      <div class="metric-value">Gibw...v2SDK</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">Submission Fee Check</div>
+      <div class="metric-value" style="color:var(--accent-emerald);">0.15 USDC Explicit</div>
+    </div>
+    <div class="metric-box">
+      <div class="metric-label">MCP / CLI Readiness</div>
+      <div class="metric-value" style="color:var(--accent-sky);">@gibwork/sdk v2.1.0</div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="filter-group">
+      <button class="active" onclick="filterRows('ALL', this)">All Open Bounties (4)</button>
+      <button onclick="filterRows('DEV', this)">Development</button>
+      <button onclick="filterRows('UGC', this)">Video / Content</button>
+    </div>
+    <div class="mono" style="font-size:0.8rem;color:var(--text-muted);">Single-Line Density Mode (Zero Wrap)</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Bounty ID</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Reward (USDC)</th>
+          <th>Intent Fee</th>
+          <th>Submissions</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="bounty-tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="m-title" style="font-size:1.05rem;">Bounty Specification</h2>
+        <button onclick="closeModal()">Close [ESC]</button>
+      </div>
+      <div class="modal-grid">
+        <div class="metric-box">
+          <div class="metric-label">Bounty UUID</div>
+          <div class="metric-value" id="m-id" style="font-size:0.85rem;"></div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-label">Escrow Reward</div>
+          <div class="metric-value" id="m-reward" style="color:var(--accent-emerald);"></div>
+        </div>
+      </div>
+      <p id="m-desc" style="font-size:0.9rem;color:var(--text-secondary);margin-bottom:12px;"></p>
+      <div class="metric-label">Ready-to-Run @gibwork/sdk &amp; CLI Command</div>
+      <pre id="m-code"></pre>
+    </div>
+  </div>
+
+  <script>
+    const BOUNTIES = [
+      {
+        id: '1052f22d-3f87-4b1d-b0d7-71a60679e7fa',
+        title: 'Developer Bounty: Build with Gibwork',
+        category: 'DEV',
+        reward: '1,000.00 USDC',
+        fee: '0.15 USDC',
+        submissions: 15,
+        desc: 'Build developer tooling, AI agents, or SDK integrations powered by @gibwork/sdk v2.1.0 on Solana.'
+      },
+      {
+        id: '5f073804-bb43-49c9-99c0-3fb498180465',
+        title: 'Create a Video About the Gibwork Mobile App',
+        category: 'UGC',
+        reward: '300.00 USDC',
+        fee: '0.15 USDC',
+        submissions: 13,
+        desc: 'Produce a vertical short-form video demonstrating how contributors discover and complete Solana tasks on Gibwork Mobile.'
+      },
+      {
+        id: 'fd98b2bd-3724-4da7-9498-21ba187cf9c7',
+        title: 'Seeking: Cold Outreach Specialist for Crypto Founders',
+        category: 'GROWTH',
+        reward: '50.00 USDC',
+        fee: '0.15 USDC',
+        submissions: 6,
+        desc: 'Execute structured founder outreach campaigns with verifiable conversion tracking.'
+      },
+      {
+        id: 'd321ae8f-34f0-4c2f-b6ef-af7773d096ba',
+        title: 'Create an X Thread About the Gibwork Mobile App',
+        category: 'UGC',
+        reward: '15.00 USDC',
+        fee: '0.15 USDC',
+        submissions: 19,
+        desc: 'Publish an analytical X thread covering Gibwork Mobile features, escrow verification, and direct Solana payouts.'
+      }
+    ];
+
+    function renderRows(filter) {
+      const tbody = document.getElementById('bounty-tbody');
+      tbody.innerHTML = '';
+      BOUNTIES.filter(b => filter === 'ALL' || b.category === filter).forEach(b => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="mono">${b.id.slice(0, 8)}...</td>
+          <td style="font-weight:600;">${b.title}</td>
+          <td><span class="tag">${b.category}</span></td>
+          <td class="reward-cell">${b.reward}</td>
+          <td class="mono">${b.fee}</td>
+          <td class="mono">${b.submissions}</td>
+          <td><button class="primary" onclick="openModal('${b.id}')">Inspect / SDK</button></td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterRows(cat, btn) {
+      document.querySelectorAll('.filter-group button').forEach(el => el.classList.remove('active'));
+      btn.classList.add('active');
+      renderRows(cat);
+    }
+
+    function openModal(id) {
+      const b = BOUNTIES.find(x => x.id === id);
+      if (!b) return;
+      document.getElementById('m-title').textContent = b.title;
+      document.getElementById('m-id').textContent = b.id;
+      document.getElementById('m-reward').textContent = b.reward;
+      document.getElementById('m-desc').textContent = b.desc;
+      document.getElementById('m-code').textContent =
+`npx @emk4652/gibwork-mcp-cli inspect ${b.id}
+npx @emk4652/gibwork-mcp-cli draft-submission \\
+  --task ${b.id} \\
+  --wallet 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1 \\
+  --url https://github.com/emk4652/gibwork-mcp-cli`;
+      document.getElementById('modal').classList.add('open');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('open');
+    }
+
+    renderRows('ALL');
+  </script>
+</body>
+</html>

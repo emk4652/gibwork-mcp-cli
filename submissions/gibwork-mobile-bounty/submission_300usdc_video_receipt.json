@@ -1,0 +1,14 @@
+{
+  "bountyId": "5f073804-bb43-49c9-99c0-3fb498180465",
+  "idempotencyKey": "5f073804-bb43-49c9-99c0-999999999902",
+  "wallet": "9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+  "content": "Official UGC Video Submission for Gibwork Mobile App ($300 USDC). Rendered 9:16 vertical MP4 video + storyboard hosted at: https://github.com/emk4652/gibwork-mcp-cli/tree/main/submissions/gibwork-mobile-bounty (Direct MP4: https://github.com/emk4652/gibwork-mcp-cli/raw/main/submissions/gibwork-mobile-bounty/gibwork-mobile-ugc-demo.mp4). Payout Wallet: 9GYpcKGMJ1DUtiWJb3WS5NDMS9ff8x2MWehrw6uCtUZ1",
+  "referenceLink": "https://github.com/emk4652/gibwork-mcp-cli/tree/main/submissions/gibwork-mobile-bounty",
+  "timestamp": "2026-10-20T16:46:07.314Z",
+  "sdkPrepareCreate": {
+    "ok": false,
+    "status": 403,
+    "code": "PLATFORM_WALLET_REQUIRED",
+    "message": "Expected an object containing only: content, referral, mediaIds, idempotencyKey"
+  }
+}

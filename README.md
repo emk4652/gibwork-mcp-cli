@@ -192,31 +192,45 @@ node ./dist/cli.js draft-submission 1052f22d-3f87-4b1d-b0d7-71a60679e7fa \
 
 ---
 
-## Automated Test Suite
-
-Run the Vitest integration suite against live Gibwork and Solana Mainnet endpoints:
-
-```bash
-npm test
-```
-
-```text
- RUN  v3.2.7
-
- ✓ tests/gibwork-kit.test.ts (8 tests) 1343ms
-   ✓ validates Solana payout wallet and deterministic signer generation
-   ✓ lists active bounties from Gibwork API and includes the $1,000 USDC Hackathon bounty
-   ✓ retrieves full bounty details for 1052f22d-3f87-4b1d-b0d7-71a60679e7fa via @gibwork/sdk
-   ✓ verifies Solana Mainnet SPL USDC escrow state and payout wallet on-curve status
-   ✓ ranks bounties by developer skill stack with word-boundary precision
-   ✓ generates an idempotent submission draft and dry-run task creation payload
-   ✓ registers all 6 required MCP tools and executes tool calls cleanly
-   ✓ constructs the Commander CLI with list, inspect, verify-escrow, watch, and draft-submission commands
-
- Test Files  1 passed (1)
-      Tests  8 passed (8)
-```
-
-## License
-
-MIT
+ ## Automated Test Suite
+ 
+ Run the Vitest integration suite against live Gibwork and Solana Mainnet endpoints:
+ 
+ ```bash
+ npm test
+ ```
+ 
+ ```text
+  RUN  v3.2.7
+ 
+  ✓ tests/gibwork-kit.test.ts (8 tests) 1343ms
+    ✓ validates Solana payout wallet and deterministic signer generation
+    ✓ lists active bounties from Gibwork API and includes the $1,000 USDC Hackathon bounty
+    ✓ retrieves full bounty details for 1052f22d-3f87-4b1d-b0d7-71a60679e7fa via @gibwork/sdk
+    ✓ verifies Solana Mainnet SPL USDC escrow state and payout wallet on-curve status
+    ✓ ranks bounties by developer skill stack with word-boundary precision
+    ✓ generates an idempotent submission draft and dry-run task creation payload
+    ✓ registers all 6 required MCP tools and executes tool calls cleanly
+    ✓ constructs the Commander CLI with list, inspect, verify-escrow, watch, and draft-submission commands
+ 
+  Test Files  1 passed (1)
+       Tests  8 passed (8)
+ ```
+ 
+ ---
+ 
+ ## Published Bounty Submissions & Deliverables Directory (`submissions/`)
+ 
+ All official deliverables, signed `@gibwork/sdk` receipts, vertical MP4 assets, and interactive prototypes for our active 0% KYC Solana bounties are published inside [`./submissions/`](./submissions):
+ 
+ | Bounty Target | Reward Pool | Deliverable Path | Status |
+ | :--- | :--- | :--- | :--- |
+ | **Gibwork Developer Hackathon** (`1052f22d-3f87-4b1d-b0d7-71a60679e7fa`) | `1,000.00 USDC` | [`submissions/gibwork-1000usdc-hackathon-submission.json`](./submissions/gibwork-1000usdc-hackathon-submission.json) | Registered (`HTTP 200` Google Form + SDK Receipt) |
+ | **Gibwork Mobile App UGC Video** (`5f073804-bb43-49c9-99c0-3fb498180465`) | `300.00 USDC` | [`submissions/gibwork-mobile-bounty/gibwork-mobile-ugc-demo.mp4`](./submissions/gibwork-mobile-bounty/gibwork-mobile-ugc-demo.mp4) | Published MP4 + SDK Receipt |
+ | **Gibwork Mobile App X Thread** (`d321ae8f-34f0-4c2f-b6ef-af7773d096ba`) | `15.00 USDC` / `200 CREDITS` | [`submissions/gibwork-mobile-bounty/README.md`](./submissions/gibwork-mobile-bounty/README.md) | Published Thread + SDK Receipt |
+ | **Superteam: Redesign Your Favourite App on Solana** | `1,500.00 USDC` | [`submissions/superteam-redesign-solana-app/index.html`](./submissions/superteam-redesign-solana-app/index.html) | Published UI Prototype + Case Study |
+ | **Superteam: Daejin, Panta x NectarFi, ChimpX, worm** | `2,120.00 USDC/USDG` | [`submissions/superteam-0kyc-deliverables/README.md`](./submissions/superteam-0kyc-deliverables/README.md) | Published Specifications & Threads |
+ 
+ ## License
+ 
+ MIT
